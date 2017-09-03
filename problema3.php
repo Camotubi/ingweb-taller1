@@ -47,8 +47,9 @@ define('descuento3',0.10);
 			$result ='<h3>Factura</h3>
 				<p>Nombre del Cliente: '.$nombre_cliente.'</p>
 				<p>Tipo de Cliente: '.$tipo_cliente.'</p>
-				<p>Descuento:'.$descuento.'</p>
-				<p>Monto Final:'.$monto_final.'</p>
+				<p>Precio Producto: '.$precio_articulo.'$</p>
+				<p>Descuento: '.($descuento*100).'$</p>
+				<p>Monto Final: '.$monto_final.'$</p>
 				<a href="">Atras</a>';
 					return $result;
 		}
