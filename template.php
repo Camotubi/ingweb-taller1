@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<meta charset = "utf-8">
-		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -25,7 +26,7 @@
 		<a href = problema4.php>Problema 4</a>
 </li>
 	<li>
-		<a href = problema5.php>Problema 5</a>
+		<a href = form.php>Formulario Validado en Cliente</a>
 </li>
 	<li>
 		<a href = problemax.php>Problema x</a>
