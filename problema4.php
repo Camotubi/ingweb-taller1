@@ -8,19 +8,31 @@ define('descuento2',0.20);
 define('descuento3',0.10);
 		function main_view()
 		{
-			$form='<form action="" method="post">
-				<input type="number" name= "operand1">
-<select name ="operacion">
+			$problema = '
+	<h3>Problema 4</h3>
+<p>Realizar un programa que almacene en variables dos números reales y un operador (+, -, *, /), y que muestre en pantalla el resultado de la operación introducida.</p>';
+			$form='
+			
+
+<form class="form-inline" action="" method="post">
+<div class="form-group">
+				<input type="number" class="form-control" step="0.01" name= "operand1">
+</div>
+<div class="form-group">
+<select name ="operacion" class="form-control" >
 	<option value ="+">+</option>
 	<option value ="-">-</option>
 	<option value ="*">*</option>
 	<option value ="/">/</option>
 </select>
-				<input type="number" name =operand2>
+</div>
+<div class="form-group">
+				<input type="number" class="form-control" step="0.01" name =operand2>
+</div>
 				<input type="hidden" name ="accion" value ="calc">
-				<input type="submit" value ="Calcular">
+				<input type="submit" class="btn btn-primary" value ="Calcular">
 				</form>';	
-			return $form;
+			return $problema.$form;
 		}
 		function result_view()
 		{
@@ -71,7 +83,7 @@ define('descuento3',0.10);
 
 			if($_POST["accion"] == "calc")
 			{
-				$view = main_view().result_view()["resp"];
+				$view = main_view().'<br>'.result_view()["resp"];
 			}
 			
 		else

@@ -7,20 +7,37 @@ define('descuento2',0.20);
 define('descuento3',0.10);
 		function main_view()
 		{
-			$form='<form action="" method="post">
-				<label>Tipo de Cliente:</label>
-<select name ="tipo_cliente">
+			$problema='
+
+	<h3>Problema 3</h3>
+<p>En una librería se venden artículos con las siguientes condiciones:</p>
+			      <ol>
+<li>Sí el cliente es de tipo 1 se le descuenta 30% </li>
+<li>Sí el cliente es de tipo 2 se le descuenta 20% </li>
+<li>Sí el cliente es de tipo 3se le descuenta 10%</li>
+</lo>';
+			$form='<div class="form-box"><form action="" method="post">
+				<div class="form-group">
+<label>Tipo de Cliente:</label>
+<select name ="tipo_cliente" class="form-control">
 	<option value ="1"> Tipo 1</option>
 	<option value ="2"> Tipo 2</option>
 	<option value ="3"> Tipo 3</option>
 </select>
-				<input type="text" name= "nombre_cliente">
-<label>Precio articulo:</label>
-				<input type="number" name =precio_articulo>
-				<input type="hidden" name ="accion" value ="calcPrecioFinal">
-				<input type="submit" value ="Calcular Precio Final">
-				</form>';	
-			return $form;
+</div>
+<div class="form-group">
+<label for="nombre_cliente">Nombre de Cliente: </label>
+				<input type="text" class="form-control" name= "nombre_cliente">
+</div>
+<div class="form-group">
+<label for="precio_articulo">Precio articulo:</label>
+				<input class="form-control" type="number" name =precio_articulo>
+</div>		
+		<input type="hidden" name ="accion" value ="calcPrecioFinal">
+				<input type="submit" class ="btn btn-primary" value ="Calcular Precio Final">
+				</form>
+</div>';
+			return $problema.$form;
 		}
 		function result_view()
 		{
@@ -40,10 +57,10 @@ define('descuento3',0.10);
 					$descuento = descuento3;
 					break;
 
-			}	
-			
+			}
+
 				$monto_final = $precio_articulo-($precio_articulo*$descuento);
-			
+
 			$result ='<h3>Factura</h3>
 				<p>Nombre del Cliente: '.$nombre_cliente.'</p>
 				<p>Tipo de Cliente: '.$tipo_cliente.'</p>
@@ -58,9 +75,9 @@ define('descuento3',0.10);
 
 			if($_POST["accion"] == "calcPrecioFinal")
 			{
-				$view = result_view();
+				$view = main_view().'<br>'.result_view();
 			}
-			
+
 		else
 		{
 			$view = main_view();
