@@ -14,6 +14,9 @@
 		<nav>
 			<ul class ="navbar list-unstyled">
 				<li>
+					<a href="index.php"><img src="img/home3.png"> Inicio</a>
+				</li>
+				<li>
 					<a href = problema1.php>Problema 1</a>
 				</li>
 				<li>
