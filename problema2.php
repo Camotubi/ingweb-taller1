@@ -28,7 +28,7 @@ error_reporting(E_ALL);
 
 					if($horas_trabajadas> 35)
 					{
-						$sueldo_semanal = $horas_trabajadas *22;
+						$sueldo_semanal = ($horas_trabajadas-35)*22+$horas_trabajadas*15 ;
 					}
 					else
 					{
@@ -36,7 +36,7 @@ error_reporting(E_ALL);
 					
 					}
 			
-			$result ='<h3>Salario semanal</h3><p>'.$sueldo_semanal.'</p><a href="">Atras</a>';
+			$result ='<h3>Salario semanal</h3><p>'.$sueldo_semanal.'$</p><a href="">Atras</a>';
 					return $result;
 		}
 	if(isset($_POST["accion"]))
